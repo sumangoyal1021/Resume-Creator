@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+
+     <title>Resume Creator</title>
+
+</head>
+<body>
+    
+    <div class="container" id="cv-form">
+    <h1 class="text-center my-2">Resume Creator</h1>
+    <h3 class="text-center">By Suman Goyal</h3><br><br>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Personal information</h2>
+            
+            <div class="form-group">
+                <label for="nameField">Your Name</label>
+                <input
+                type="text"
+                id="nameField"
+                placeholder="Enter here"
+                class="form-control"
+                />
+            </div>
+            <div class="form-group mt-2">
+                <label for="contactField">Your Contact</label>
+                <input
+                type="text"
+                id="contactField"
+                placeholder="Enter here"
+                class="form-control"
+                />
+            </div>
+            <div class="form-group mt-2">
+                <label for="addressField">Your Address</label>
+                <textarea
+                id="addressField"
+                placeholder="Enter here"
+                class="form-control"
+                ></textarea>
+            </div>
+
+            <div class="form-group mt-3">
+
+                <label for="">Select Your Picture</label>
+                <input id="imgField" type="file" class="form-control">
+
+            </div>
+
+            <p class="text-secondary mt-3">Important Links</p>
+
+            <div class="form-group mt-2">
+                <label for="linkedField">LinkedIn</label>
+                <input
+                type="text"
+                id="linkedField"
+                placeholder="Enter here"
+                class="form-control"
+                />
+            </div>
+            <div class="form-group mt-2">
+                <label for="githubField">Github</label>
+                <input
+                type="text"
+                id="githubField"
+                placeholder="Enter here"
+                class="form-control"
+                />
+            </div>
+            <div class="form-group mt-2">
+                <label for="otherField">Facebook</label>
+                <input
+                type="text"
+                id="fbField"
+                placeholder="Enter here"
+                class="form-control"
+                />
+            </div>
+
+
+        </div>
+
+
+        <div class="col-md-6">
+            <h2>Professional Information</h2>
+
+            <div class="form-group mt-2">
+                <label for="">Objective</label>
+                <textarea
+                id="objectiveField"
+                placeholder="Enter here"
+                class="form-control"
+                ></textarea>
+            </div>
+            <div class="form-group mt-2" id="we">
+                <label for="">Work Experience</label>
+                <textarea
+                placeholder="Enter here"
+                class="form-control weField"
+                ></textarea>
+
+                <div class="container text-center" id="weAddButton">
+                    <button onclick="addNewWEField()" class="btn btn-primary btn-sm mt-3">Add</button>
+                </div>
+            </div>
+            <div class="form-group mt-2" id="aq">
+                <label for="">Academic Qualification</label>
+                <textarea
+                placeholder="Enter here"
+                class="form-control aqField"
+                ></textarea>
+
+                <div class="container text-center" id="aqAddButton">
+                    <button onclick="addNewAQField()" class="btn btn-primary btn-sm mt-3">Add</button>
+                </div>
+            </div>
+         </div>
+       </div>
+       <div class="container text-center mt-3">
+           <button onclick="generateCV()" class="btn btn-danger btn-lg">Generate CV</button>
+       </div>
+    </div>
+
+    <!-- Template for CV -->
+
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <img 
+                src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" alt=""
+                class="img-fluid myimg"
+                id="imgTemplate"
+                />
+
+                <div class="container">
+                    <p id="nameT1">Suman Goyal</p>
+                    <p id="contactT">5637583, 7358388</p>
+                    <p id="addressT">826492462864 Surat, India</p>
+                    <hr />
+
+                    <p>
+                        <a id="fbT" href="#1">www.facebook.com</a>
+                    </p>
+                    <p>
+                        <a id="githubT" href="#1">www.github.com</a>
+                    </p>
+                    <p>
+                        <a id="linkedT" href="#1">www.linkedin.com</a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <h1 id="nameT2" class="text-center" style="font-weight: 980;">Suman Goyal</h1>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam nam error itaque numquam aliquid aspernatur quam est facere provident! Fuga adipisci asperiores accusamus nam voluptas porro nesciunt aspernatur quaerat error molestias quam consectetur maiores natus consequatur assumenda perspiciatis animi, necessitatibus quod, eum delectus placeat quidem at. Totam voluptatum qui architecto.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, consequuntur.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, consequuntur.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, consequuntur.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, consequuntur.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, consequuntur.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, consequuntur.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+
+                    <button onclick="printCV()" class="btn background">
+                        Print CV
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
